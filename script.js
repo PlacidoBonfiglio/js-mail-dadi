@@ -2,11 +2,11 @@ console.log('JS OK');
 
 //ESERCIZIO 1
 
-// Prendere elementi dal DOM
+// Recupero elementi dal DOM
 // Chiedere all'utente un numero da 1 a 6
 // Validazione scelta utente
 // Preparare numero casuale per il pc
-// Preparare messaggi "Vittoria" o "Sconfitta" e verifica
+// Preparare messaggi "Vittoria" e "Sconfitta"
 // Stampare in pagina il risultato
 
 //Prendo elemanti dal DOM
@@ -22,17 +22,25 @@ if (userNumber = '' || isNaN(userNumber) || userNumber > 6) {
 }
 
 // Preparo il lumero casuale da 1 a 6
-const cpuNumber = Math.floor(Math.random() * 6) + 1;
+const cpuNumber = parseInt(Math.floor(Math.random() * 6) + 1);
 console.log(cpuNumber);
 
 // Preparazione messaggio
-let resultMessage = `Hai perso! il tuo numero: ${userNumber}, il numero della CPU: ${cpuNumber}`;
+let resultMessage = '';
 
 // controllo se l'utente ha vinto
-if (userNumber > cpuNumber) resultMessage = `Hai vinto! il tuo numero: ${userNumber}, il numero della CPU: ${cpuNumber}`;
+if (cpuNumber < userNumber) {
+    resultMessage = `Hai vinto! il tuo numero: ${userNumber}, il numero della CPU: ${cpuNumber}`;
+} else if (cpuNumber > userNumber) {
+    resultMessage = `Hai perso! il tuo numero: ${userNumber}, il numero della CPU: ${cpuNumber}`;
+} else {
+    resultMessage = `Pareggio! il tuo numero: ${userNumber}, il numero della CPU: ${cpuNumber}`;
+}
 
 // Stampo in pagina il risultato
 targetElement.innerHTML = resultMessage;
 
 
 // ESERCIZIO 2
+
+// Recupero elementi dal DOM
