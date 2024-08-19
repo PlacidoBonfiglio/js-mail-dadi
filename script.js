@@ -48,3 +48,21 @@ targetElement.innerHTML = resultMessage;
 // Chiedere all'utente la sua e-mail
 // Verificare che la sua mail sia nell'array
 // Stampare in pagina messaggio di esito del controllo
+
+// Recupero elementi dal DOM
+const emailField = document.querySelector('input');
+const button = document.querySelector('button');
+const outcome = document.getElementById('outcome');
+
+// Creo array white list per le e-mail
+const mailWhiteList = ['array@gmai.com', 'javascript@gmail.com', 'htmlcss@gmail.com'];
+
+// Creo messaggio esito del controllo
+let emailMessage = '<strong>Accesso negato. La tua e-mail non è in lista</strong>';
+
+// Aggiungo evento al click del bottone
+button.addEventListener('click', function(e) {
+    // Modifico il comportamento naturale del bottone all'interno del form
+    e.preventDefault();
+    
+})
