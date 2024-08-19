@@ -55,10 +55,10 @@ const button = document.querySelector('button');
 const outcome = document.getElementById('outcome');
 
 // Creo array white list per le e-mail
-const emailWhiteList = ['array@gmai.com', 'javascript@gmail.com', 'htmlcss@gmail.com'];
+const emailWhiteList = ['array@gmail.com', 'javascript@gmail.com', 'htmlcss@gmail.com'];
 
 // Creo messaggio esito del controllo
-let emailMessage = '<strong>Accesso negato. La tua e-mail non è in lista</strong>';
+let emailMessage = '';
 
 // Aggiungo evento al click del bottone
 button.addEventListener('click', function(e) {
@@ -67,6 +67,13 @@ button.addEventListener('click', function(e) {
 
     // Recupero la email dell'utente
     const userEmail = emailField.value.trim();
-    console.log('email uetnte: ', userEmail);
 
+    if (userEmail !== emailWhiteList[0] && userEmail !== emailWhiteList[1] && userEmail !== emailWhiteList[2]) {
+        emailMessage = '<strong>Accesso negato. La tua e-mail non è autorizzata.</strong>';
+    } else {
+        emailMessage = '<strong>Accesso consentito. La tua e-mail è autorizzata.</strong>';
+    }
+
+    // Stampo il messaggio di esito del controllo
+    outcome.innerHTML = emailMessage;
 })
