@@ -14,7 +14,6 @@ const targetElement = document.getElementById('target');
 
 // Preparo il lumero casuale da 1 a 6
 const cpuNumber = parseInt(Math.floor(Math.random() * 6) + 1);
-console.log(cpuNumber);
 
 // Preparazione messaggio
 let resultMessage = '';
@@ -35,7 +34,6 @@ if (userNumber == '' || isNaN(userNumber) || userNumber > 6) {
     } else {
         resultMessage = `<strong>Pareggio!</strong> il tuo numero: <strong>${userNumber}</strong>, il numero della CPU: <strong>${cpuNumber}</strong>`;
     }
-    console.log(resultMessage)
 }
 
 // Stampo in pagina il risultato
@@ -45,3 +43,8 @@ targetElement.innerHTML = resultMessage;
 // ESERCIZIO 2
 
 // Recupero elementi dal DOM
+// Creare lista e-mail autorizzate
+// Creare messaggio dell'esito del controllo
+// Chiedere all'utente la sua e-mail
+// Verificare che la sua mail sia nell'array
+// Stampare in pagina messaggio di esito del controllo
